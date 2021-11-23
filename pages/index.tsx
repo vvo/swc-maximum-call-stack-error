@@ -17,6 +17,8 @@ const Home: NextPage = () => {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
+        <Form />
+
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
@@ -67,6 +69,16 @@ const Home: NextPage = () => {
       </footer>
     </div>
   )
+}
+
+function Form({ onChange = function () {} }) {
+  return (
+    <input
+      onChange={function () {
+        onChange();
+      }}
+    />
+  );
 }
 
 export default Home
